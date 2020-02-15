@@ -1,0 +1,13 @@
+.nav-links_left{
+    width: 85%;
+    margin-left:2%;
+}
+.nav-links_right{
+    width:15%;
+}
+.aRefs{
+    width: 15%!important;
+    height: 15%!important;
+    margin-left:5%;
+    margin-right: 5%;
+}

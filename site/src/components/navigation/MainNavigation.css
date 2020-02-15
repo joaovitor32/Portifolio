@@ -1,0 +1,9 @@
+.nav-links_box{    
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+.nav-links_left{
+    display: flex;
+}

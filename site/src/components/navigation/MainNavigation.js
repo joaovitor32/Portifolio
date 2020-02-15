@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 import './MainNavigation.css';
 
@@ -11,9 +10,13 @@ import NavLinks from './NavLinks'
 const MainNavigation = props =>{
     return (
         <MainHeader >
-            <NavLinks path="/home" nome="Home"/>
-            <NavLinks path="/portifolio" nome="Portifólio"/>
-            <NavLinks path="/contato" nome="Contato"/>
+            <div className="nav-links_box" >
+                <div className="nav-links_left">
+                    <NavLinks type="text" path="/home" nome="Home"/>
+                    <NavLinks type="text" path="/portifolio" nome="Portifólio"/>
+                    <NavLinks type="text" path="/contato" nome="Contato"/>
+                </div>
+            </div>
         </MainHeader>
     )
 
