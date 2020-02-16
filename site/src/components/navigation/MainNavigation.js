@@ -13,7 +13,7 @@ const MainNavigation = props =>{
             <div className="nav-links_box" >
                 <div className="nav-links_left">
                     <NavLinks type="text" path="/home" nome="Home"/>
-                    <NavLinks type="text" path="/portifolio" nome="Portifólio"/>
+                    <NavLinks type="text" path="/portifolio" nome="Projetos"/>
                     <NavLinks type="text" path="/contato" nome="Contato"/>
                 </div>
             </div>
