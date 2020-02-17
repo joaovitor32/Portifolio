@@ -34,3 +34,19 @@ hr{
     margin-left:2%;
     margin-right: 1%;
 }
+@media only screen and (max-width: 600px) {
+    .hTagsBox>h5,.hTagsBox>h2{
+        text-align: center;
+    }
+    .boxIcons{
+        display: block;
+        margin-left:auto;
+        margin-right: auto;
+    }
+    .boxIcons>img{
+        margin-top:1%;
+    }
+    hr{
+        width: 100%;
+    }
+}

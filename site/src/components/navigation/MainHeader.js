@@ -9,8 +9,8 @@ const MainHeader = props =>{
     return  (
         <header role="banner">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                  <div className="nav-links_left" id="navbarSupportedContent">
-                    <ul className="navbar-nav">
+                <div className="nav-links_left" id="navbarSupportedContent">
+                    <ul className="navbar-nav navUl">
                         {props.children}
                     </ul>
                 </div>

@@ -11,11 +11,9 @@ const MainNavigation = props =>{
     return (
         <MainHeader >
             <div className="nav-links_box" >
-                <div className="nav-links_left">
-                    <NavLinks type="text" path="/home" nome="Home"/>
-                    <NavLinks type="text" path="/portifolio" nome="Projetos"/>
-                    <NavLinks type="text" path="/contato" nome="Contato"/>
-                </div>
+                <NavLinks class='NavLink' type="text" path="/home" nome="Home"/>
+                <NavLinks class='NavLink' type="text" path="/portifolio" nome="Projetos"/>
+                <NavLinks class='NavLink' type="text" path="/contato" nome="Contato"/>
             </div>
         </MainHeader>
     )

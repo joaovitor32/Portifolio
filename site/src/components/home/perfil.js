@@ -13,6 +13,7 @@ import html from './images/html.png'
 import css from './images/css.jpg'
 import mysql from './images/mysql.png'
 import mongo from './images/mongo.jpg'
+import react from './images/react.png'
 
 const Perfil = props=>{
     return (
@@ -33,6 +34,7 @@ const Perfil = props=>{
                                 <img src={css} alt='css'/>
                                 <img src={mysql} alt='mysql'/>
                                 <img src={mongo} alt='mongo'/>
+                                <img src={react} alt='react'/>
                             </div>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 .nav-links_left{
     width: 85%;
-    margin-left:2%;
+    margin-left:4%;
 }
 .nav-links_right{
     width:15%;
@@ -10,4 +10,33 @@
     height: 15%!important;
     margin-left:5%;
     margin-right: 5%;
+}
+@media only screen and (max-width: 800px) {
+    .nav-links_left{
+        width: 100%;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+   .nav-links_right{
+        width: 100%;
+        display: flex;
+        justify-content:flex-end;
+        align-items: center;
+        margin-top:2%;
+        margin-bottom:2%;
+   }
+   .aRefs{
+        width: 25%!important;
+        height: 25%!important;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .navUl{
+        width: 100%;
+    }
+    header{
+        width: 100%;
+    }
 }
