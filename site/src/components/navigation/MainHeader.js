@@ -8,6 +8,11 @@ import linkedin from './icons/linkedin.svg'
 const MainHeader = props =>{
     return  (
         <header role="banner">
+             <div className="nav-links_cel" >
+                    <a href="https://www.facebook.com/joao.buzina"><img  alt="facebook" src={facebook}/></a>
+                    <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-muniz-lopes-3545a3154/"><img  alt="linkedin" src={linkedin}/></a>
+                    <a href="https://github.com/joaovitor32"><img className="aRefs" alt="github" src={github}/></a>
+            </div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="nav-links_left" id="navbarSupportedContent">
                     <ul className="navbar-nav navUl">
@@ -15,8 +20,8 @@ const MainHeader = props =>{
                     </ul>
                 </div>
                 <div className="nav-links_right" >
-                    <a href="https://www.facebook.com/joao.buzina"><img className="aRefs" alt="facebook" src={facebook}/></a>
-                    <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-muniz-lopes-3545a3154/"><img className="aRefs" alt="linkedin" src={linkedin}/></a>
+                    <a href="https://www.facebook.com/joao.buzina"><img  alt="facebook" src={facebook}/></a>
+                    <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-muniz-lopes-3545a3154/"><img  alt="linkedin" src={linkedin}/></a>
                     <a href="https://github.com/joaovitor32"><img className="aRefs" alt="github" src={github}/></a>
                 </div>
             </nav>

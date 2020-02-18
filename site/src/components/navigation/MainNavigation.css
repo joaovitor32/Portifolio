@@ -1,5 +1,5 @@
 .nav-links_box{    
-    width: 100%;
+    width: auto;
     display: flex;
     justify-content:flex-start;
     align-items: flex-start;
