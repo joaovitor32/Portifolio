@@ -71,7 +71,7 @@
 }
 @media only screen and (max-width: 600px) {
     .box-form{
-        width: 98%;
+        width: 92%;
         margin-top:2rem;
    }
    .box-form>strong{
