@@ -3,7 +3,8 @@ const express=require('express');
 const bodyParser=require('body-parser');
 const mongoose=require('mongoose');
 
-const messageRoutes=require('./routes/message-routes')
+const messageRoutes=require('./routes/message-routes');
+const userRoutes=require('./routes/user-routes');
 
 const HttpError=require('./models/httperror')
 
@@ -22,7 +23,7 @@ app.use((req,res,next)=>{
 })
 
 app.use('/api/messages',messageRoutes);
-
+app.use('/api/user',userRoutes);
 
 app.use((req, res, next) => {
   const error = new HttpError('Could not find this route.', 404);
