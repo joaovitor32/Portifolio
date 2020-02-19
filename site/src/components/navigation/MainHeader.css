@@ -5,7 +5,6 @@
 .nav-links_right{
     width:15%;
 }
-
 .nav-links_right>a>img{
     width: 15%!important;
     height: 15%!important;
@@ -18,16 +17,8 @@
 @media only screen and (max-width: 800px) {
     nav{
         margin-top:0%;
-    }
-    .nav-links_left{
-        width: 100%;
-        display: flex;
-        justify-content:center;
-        align-items: center;
-        text-align:left;
-        margin-top: 0%;
-        margin-left:0%;
-    }
+    }  
+    
     .nav-links_right{
         display: none;
     }
@@ -62,4 +53,6 @@
     .navbar{
         flex-direction: column-reverse;
     }
+   
 }
+
