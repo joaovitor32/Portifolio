@@ -1,0 +1,18 @@
+.card{
+    margin:0 auto;
+    margin-top:4%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.26);
+    border-radius:10px;
+    padding:1rem;
+    overflow: hidden;
+    background: #f5f5f5;
+    width:50%;
+}
+@media screen and (max-width: 850px) {
+    .card{
+        width:80%;
+    }
+}

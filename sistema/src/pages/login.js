@@ -1,4 +1,4 @@
-import React,{useState, useContext,useReducer} from 'react';
+import React,{useState, useContext} from 'react';
 import Card from '../components/UIElements/Card'
 import './login.css';
 import {VALIDATOR_REQUIRE, VALIDATOR_EMAIL} from './../components/util/validators';
@@ -42,12 +42,13 @@ const Login = props => {
                 <div>
                     <h3>Login:</h3>
                     <div className="form">
-                        <form className="login-form" onSubmit={submitHandler}>
+                        <form  autoComplete="off" className="login-form" onSubmit={submitHandler}>
                             <input 
                                 validators={[VALIDATOR_REQUIRE(),VALIDATOR_EMAIL()]} 
                                 type="email" 
                                 placeholder="Login"
                                 id="email" 
+                                autoComplete="new-login"
                                 name="login"
                                 onChange={e=>setLogin(e.target.value)}
                             />
@@ -56,6 +57,7 @@ const Login = props => {
                                 type="password" 
                                 placeholder="password" 
                                 id="password"
+                                autoComplete="new-password"
                                 name="email"
                                 onChange={e=>setPassword(e.target.value)}
                             />
