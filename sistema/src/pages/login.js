@@ -1,9 +1,70 @@
-import React from 'react';
+import React,{useState, useContext,useReducer} from 'react';
+import Card from '../components/UIElements/Card'
+import './login.css';
+import {VALIDATOR_REQUIRE, VALIDATOR_EMAIL} from './../components/util/validators';
+import {useHttpClient} from '../components/hooks/http-hook'
+import AuthContext from '../components/context/auth-context'
 
+const Login = props => {
 
-const Login = props=>{
+    const [login,setLogin]=useState(null);
+    const [password,setPassword]=useState(null);
+
+    const {sendRequest}=useHttpClient();
+    const auth=useContext(AuthContext);
+
+    const submitHandler=async event=>{
+        event.preventDefault();
+        
+        try{
+            
+            const responseData=await sendRequest(
+                `http://localhost:5000/api/user/login`,
+                'POST',
+                JSON.stringify({
+                    login:login,
+                    password:password
+                }),{
+                    'Content-Type': 'application/json'
+                }
+            )
+            auth.login(responseData.userId,responseData.token)
+    
+        }catch(err){
+
+        }
+   
+    }
+
     return (
-        <h2>Login</h2>
+        <React.Fragment>
+            <Card>
+                <div>
+                    <h3>Login:</h3>
+                    <div className="form">
+                        <form className="login-form" onSubmit={submitHandler}>
+                            <input 
+                                validators={[VALIDATOR_REQUIRE(),VALIDATOR_EMAIL()]} 
+                                type="email" 
+                                placeholder="Login"
+                                id="email" 
+                                name="login"
+                                onChange={e=>setLogin(e.target.value)}
+                            />
+                            <input   
+                                validators={[VALIDATOR_REQUIRE()]} 
+                                type="password" 
+                                placeholder="password" 
+                                id="password"
+                                name="email"
+                                onChange={e=>setPassword(e.target.value)}
+                            />
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </Card>
+        </React.Fragment>
     )
 }
 
