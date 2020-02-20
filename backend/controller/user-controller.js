@@ -9,7 +9,6 @@ const login = async(req,res,next)=>{
     const {login,password}=req.body;
 
     let existingUser;
-   
     try{
         existingUser= await User.findOne({login:login});
     }catch(err){
