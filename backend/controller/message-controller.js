@@ -26,4 +26,21 @@ const createMessage= async(req,res,next)=>{
 
 } 
 
+const getMessages =async (req,res,next)=>{
+
+    let messages;
+    try{
+        messages=await Mensagem.find();
+    }catch(err){
+        const error = new HttpError('Busca por mensagens falhou',500);
+        return next(error);
+    }
+
+    if(!messages||messages.length===0){
+        const error=new HttpError('Não existe nenhuma mensagem',404);
+    }
+    res.json({messages:messages.map(message=>message.toObject({getters:true}))})
+}
+
+exports.getMessages=getMessages;
 exports.createMessage=createMessage;
