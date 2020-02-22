@@ -38,9 +38,30 @@ const getMessages =async (req,res,next)=>{
 
     if(!messages||messages.length===0){
         const error=new HttpError('Não existe nenhuma mensagem',404);
+        return next(error);
     }
-    res.json({messages:messages.map(message=>message.toObject({getters:true}))})
+    res.json({ messages: messages.map(message => message.toObject({ getters: true })) });
+}
+
+const deleteMessage = async (req,res,next)=>{
+    const messageId=req.params.pid;
+    let message;
+    try{
+        message = await Mensagem.findById(messageId);    
+    }catch(err){
+        let error= new HttpError('Não foi encontrada uma mensagem com esse id',404)
+        return next(error);
+    }
+    
+    try{
+        await message.remove();
+    }catch(err){
+        let error =new HttpError('A mensagem não pode ser deletada',500);
+        return next(error);
+    }
+    res.status(200).json({message:"Mensagem deletada!"})
 }
 
 exports.getMessages=getMessages;
 exports.createMessage=createMessage;
+exports.deleteMessage=deleteMessage;

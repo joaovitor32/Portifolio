@@ -10,9 +10,9 @@ router.post('/newmessage',[
     check('mensagem').not().isEmpty(),
 ],messageController.createMessage)
 
+//Pra testar rota no Postman não esqueça de tirar o check auth
 router.use(checkAuth);
 
 router.get('/listamensagens',messageController.getMessages)
-
-
+router.delete('/:pid',messageController.deleteMessage);
 module.exports = router;
