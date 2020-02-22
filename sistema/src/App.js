@@ -20,6 +20,7 @@ function App() {
         <Route path="/mensagem" exact>
           <Mensagem/>
         </Route>
+        <Redirect to="/mensagem" />
       </Switch>
     ) 
   }else{

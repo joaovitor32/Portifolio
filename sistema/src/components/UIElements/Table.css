@@ -1,0 +1,23 @@
+td{ 
+    border: 1px solid #484d53;
+    border-collapse: collapse;
+    color:white;
+    background-color:#5c6166 ;
+    justify-content: center;
+    padding:1%;
+    align-items: center;
+    text-align: center;
+}
+.trash{
+    width: 15%;
+    height: 20%;
+    padding: 0%;
+    padding: 0px; 
+    margin: 0px;
+}
+@media screen and (max-width: 850px) {
+    .trash{
+        width: 20%;
+        height: 10%;
+    }
+}
