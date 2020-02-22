@@ -3,23 +3,32 @@ import React, { useContext } from 'react';
 import './Table.css';
 import Trash from './icons/trash.svg'
 
-import {useHttpClient} from '../hooks/http-hook'
+import { useHttpClient } from '../hooks/http-hook'
 import AuthContext from '../context/auth-context'
 
 const ContentTable = props => {
 
-    const {sendRequest} = useHttpClient();
+    const { sendRequest } = useHttpClient();
 
-    const auth =useContext(AuthContext);
+    const auth = useContext(AuthContext);
 
-    const deleteHandler = async (id)=>{
+    const deleteHandler = async (id) => {
 
-        try{
-            console.log(id)
-        }catch(err){
+        try {
+
+            await sendRequest(
+                `http://localhost:5000/api/messages/${id}`,
+                'DELETE',
+                null,
+                {
+                    Authorization:'Bearer '+auth.token 
+                }
+            )
+    
+        } catch (err) {
 
         }
-
+        props.onDelete();
     }
 
     return (
@@ -29,7 +38,7 @@ const ContentTable = props => {
                 <td>{message.name}</td>
                 <td>{message.email}</td>
                 <td>{message.mensagem}</td>
-                <td><img className="trash" onClick={()=>deleteHandler(message._id)} src={Trash} alt="trash" /></td>
+                <td><img className="trash" onClick={() => deleteHandler(message._id)} src={Trash} alt="trash" /></td>
             </tr>
 
         )

@@ -8,33 +8,44 @@ import './message.css'
 
 const Mensagem = props => {
 
-    const { isLoading, sendRequest } = useHttpClient();
+    /*
+        "name": "João Vitor Muniz Lopes",
+        "email": "joaovitormunizlopes@gmail.com",
+        "mensagem": "adadadsadsasdasdsasdsadasda"
+    */
+    const { isLoading, sendRequest,error} = useHttpClient();
     const auth = useContext(AuthContext);
     const [loadedMessages, setLoadedMessages] = useState();
 
+    const fetchMessages = async () => {
+        setLoadedMessages(null);
+        try {
+            const responseData = await sendRequest(
+                'http://localhost:5000/api/messages/listamensagens'
+                ,
+                "GET",
+                null
+                , {
+                    "Content-Type": "application/json",
+                    authorization: 'Bearer ' + auth.token
+
+                })
+
+            setLoadedMessages(responseData.messages);
+
+        } catch (err) {
+
+        }
+    }
+
     useEffect(
         () => {
-            const fetchMessages = async () => {
-                try {
-                    const responseData = await sendRequest(
-                        'http://localhost:5000/api/messages/listamensagens'
-                        ,
-                        "GET",
-                        null
-                        , {
-                            "Content-Type": "application/json",
-                            authorization: 'Bearer ' + auth.token
-
-                        })
-                    setLoadedMessages(responseData.messages);
-                    console.log(responseData.messages)
-                } catch (err) {
-
-                }
-            }
-
             fetchMessages();
         }, [sendRequest, auth]);
+
+    const onDelete = () => {
+        fetchMessages();
+    }
 
     return (
         <React.Fragment>
@@ -49,10 +60,10 @@ const Mensagem = props => {
                         </tr>
                     </thead>
                     <tbody>
-                        {!isLoading && loadedMessages && <ContentTable messages={loadedMessages} />}
+                        {!isLoading && loadedMessages && <ContentTable messages={loadedMessages} onDelete={onDelete} />}
                     </tbody>
                 </table>
-                {!isLoading && !loadedMessages &&
+                {!isLoading && error &&
                     <Card>
                         <h3>Não há nenhuma mensagem disponível</h3>
                     </Card>
