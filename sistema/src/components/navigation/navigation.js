@@ -14,6 +14,7 @@ const Navigation = props =>{
             <nav>
                 <ul className="menu">
                    {auth.isLoggedIn&&<li><NavLink type="text"  to="/mensagem" nome="Mensagem">Mensagem</NavLink></li>}
+                   {auth.isLoggedIn&&<li><NavLink type="text"  to="/portifolio" nome="Portifolio">Portifólio</NavLink></li>}
                 </ul>
             </nav>
             {auth.isLoggedIn&&<img onClick={auth.logout} className="turnoff" src={turnoff} alt="turn off"/>}

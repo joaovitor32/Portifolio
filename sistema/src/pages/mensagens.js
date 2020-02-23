@@ -8,11 +8,7 @@ import './message.css'
 
 const Mensagem = props => {
 
-    /*
-        "name": "João Vitor Muniz Lopes",
-        "email": "joaovitormunizlopes@gmail.com",
-        "mensagem": "adadadsadsasdasdsasdsadasda"
-    */
+
     const { isLoading, sendRequest,error} = useHttpClient();
     const auth = useContext(AuthContext);
     const [loadedMessages, setLoadedMessages] = useState();

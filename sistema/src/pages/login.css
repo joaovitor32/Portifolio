@@ -11,6 +11,8 @@ h6{
 .form {
   position: relative;
   z-index: 1;
+  justify-content: center;
+  margin-top:auto;
   background: #FFFFFF;
   max-width: 360px;
   margin: 0 auto 100px;

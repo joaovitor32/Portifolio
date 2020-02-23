@@ -5,6 +5,8 @@ import {useAuth} from './components/hooks/auth-hooks';
 import AuthContext from './components/context/auth-context';
 
 import Mensagem from './pages/mensagens';
+import Portifolio from './pages/portifolio';
+
 import Login from './pages/login';
 import Navigation from './components/navigation/navigation'
 
@@ -19,6 +21,9 @@ function App() {
       <Switch>
         <Route path="/mensagem" exact>
           <Mensagem/>
+        </Route>
+        <Route path="/portifolio" exact>
+          <Portifolio/>
         </Route>
         <Redirect to="/mensagem" />
       </Switch>
