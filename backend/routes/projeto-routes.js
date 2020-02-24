@@ -6,15 +6,18 @@ const checkAuth=require('../middleware/checkAuth');
 
 const router = express.Router();
 
+//Pra testar rota no Postman retirar Check Auth
 router.use(checkAuth);
 
 router.post('/cadastrarprojeto',
     fileUpload.single('image'),
     [
         check('nome').not().isEmpty(),
-        check('tecnologias').not().isEmpty(),
+        check('tecnologia').not().isEmpty(),
+        check('link').not().isEmpty(),
     ],
     projetoController.createProjeto
 )
+
 
 module.exports=router;
