@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, useCallback } from 'react';
 import { useHttpClient } from '../components/hooks/http-hook';
 import AuthContext from '../components/context/auth-context'
 import ContentTable from '../components/UIElements/Table'
@@ -13,10 +13,10 @@ const Mensagem = props => {
     const auth = useContext(AuthContext);
     const [loadedMessages, setLoadedMessages] = useState();
 
-    const fetchMessages = async () => {
+    const fetchMessages = useCallback(async() => {
         setLoadedMessages(null);
         try {
-            const responseData = await sendRequest(
+            const responseData =  await sendRequest(
                 'http://localhost:5000/api/messages/listamensagens'
                 ,
                 "GET",
@@ -31,13 +31,12 @@ const Mensagem = props => {
 
         } catch (err) {
 
-        }
-    }
+    }},[auth,sendRequest])
 
     useEffect(
         () => {
             fetchMessages();
-        }, [sendRequest, auth]);
+        }, [ fetchMessages]);
 
     const onDelete = () => {
         fetchMessages();

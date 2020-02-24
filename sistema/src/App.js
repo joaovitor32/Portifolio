@@ -6,9 +6,11 @@ import AuthContext from './components/context/auth-context';
 
 import Mensagem from './pages/mensagens';
 import Portifolio from './pages/portifolio';
+import NovoProjeto from './pages/NovoProjeto';
 
 import Login from './pages/login';
 import Navigation from './components/navigation/navigation'
+
 
 function App() {
   
@@ -25,7 +27,10 @@ function App() {
         <Route path="/portifolio" exact>
           <Portifolio/>
         </Route>
-        <Redirect to="/mensagem" />
+        <Route path="/novoprojeto" exact>
+          <NovoProjeto/>
+        </Route>
+        <Redirect to="/mensagem"/> 
       </Switch>
     ) 
   }else{
@@ -41,7 +46,13 @@ function App() {
 
   return (
     <AuthContext.Provider
-    value={{ isLoggedIn:!!token,token:token , login: login, logout: logout, userId:userId}}
+      value={{ 
+          isLoggedIn:!!token,
+          token:token , 
+          login: login, 
+          logout: logout, 
+          userId:userId
+      }}
     >
       <Router>
         <Navigation/>

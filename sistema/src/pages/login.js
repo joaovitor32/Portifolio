@@ -4,13 +4,14 @@ import './login.css';
 import { VALIDATOR_REQUIRE, VALIDATOR_EMAIL } from './../components/util/validators';
 import { useHttpClient } from '../components/hooks/http-hook'
 import AuthContext from '../components/context/auth-context'
+import ErrorModal from '../components/modal/errormodal'
 
 const Login = props => {
 
     const [login, setLogin] = useState(null);
     const [password, setPassword] = useState(null);
 
-    const { sendRequest } = useHttpClient();
+    const {error, sendRequest,clearError } = useHttpClient();
     const auth = useContext(AuthContext);
 
     const submitHandler = async event => {
@@ -38,6 +39,7 @@ const Login = props => {
 
     return (
         <React.Fragment>
+            <ErrorModal error={error} onClear={clearError} /> 
             <Card>
                 <div>
                     <h3>Login:</h3>

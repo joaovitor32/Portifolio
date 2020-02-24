@@ -1,10 +1,16 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React from 'react';
+import {useHistory} from 'react-router-dom'
 
+import './portifolio.css'
+
+import Add from './icons/plus.png'
 
 const Portifolio = props => {
 
+    const history=useHistory();
+
     return (
-        <h2>Portifólio</h2>
+        <button onClick={()=>history.push('/novoprojeto')} className="button-cad-projeto"><img src={Add} alt="novo projeto"/></button>
     )
 }
 

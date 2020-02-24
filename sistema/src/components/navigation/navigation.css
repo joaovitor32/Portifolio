@@ -1,6 +1,5 @@
 body,
 ul,
-li,
 p {
   margin: 0px;
   padding: 0px;
@@ -8,7 +7,11 @@ p {
   font-size: 1.2rem;
   font-family: Arial;
 }
-
+li{
+    list-style: none;
+    margin-left:1rem;
+    padding: 1%;
+}
 .header{
     background-color: #343a40;
     display:flex;
@@ -21,10 +24,7 @@ p {
 .menu{
     display: flex;
 }
-.menu>li{
-    margin-left:10%;
-    padding:2%;
-}
+
 .menu>li>*{
     text-decoration: none;
     color: white;
