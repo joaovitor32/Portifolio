@@ -1,0 +1,38 @@
+.div-form{
+    margin-top:1.5rem;
+    margin-bottom:1.5rem;
+}
+.div-form>label{
+    font-weight: bold;
+    color:#343a40;
+    margin-right: 2%;
+}
+.div-form>input{
+    font-weight: bold;
+    background-color:transparent;
+    border-radius:15px;
+    border:1px solid #343a40;
+    padding:1%;
+    outline:none;
+}
+.btn-cad-projeto{
+    color:white;
+    background-color:#343a40;
+    width:30%;
+    height: 10%;
+    padding:0.5rem;
+    font-size:0.9em;
+    border-radius:1rem;
+    border:1px solid transparent;
+    outline:none;
+    margin-bottom:1rem;
+    margin-top:1rem;
+}
+/*---
+.btn-cad-projeto:hover{
+    color:#343a40;
+    background-color:transparent;
+    border:1px solid #343a40;
+    transition: 0.5s;
+}
+---*/
