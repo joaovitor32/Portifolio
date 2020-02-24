@@ -33,7 +33,7 @@ const NovoProjeto = props => {
                 'http://localhost:5000/api/projeto/createprojeto',
                 'POST',
                 formData,{
-                
+                    Authorization:'Bearer '+auth.token;
                 }
             )
 
