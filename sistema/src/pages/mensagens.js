@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext, useCallback } from 'react';
 import { useHttpClient } from '../components/hooks/http-hook';
 import AuthContext from '../components/context/auth-context'
-import ContentTable from '../components/UIElements/Table'
+import ContentTable from '../components/UIElements/TableMessages'
 import Card from '../components/UIElements/Card'
 
 import './message.css'

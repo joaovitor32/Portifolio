@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import './Table.css';
+import './TableMessages.css';
 import Trash from './icons/trash.svg'
 
 import { useHttpClient } from '../hooks/http-hook'
