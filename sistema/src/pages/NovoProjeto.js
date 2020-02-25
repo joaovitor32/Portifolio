@@ -1,8 +1,8 @@
-import React,{useState,useContext} from 'react';
+import React, { useState, useContext } from 'react';
 
 import './NovoProjeto.css'
 
-import {useHttpClient} from '../components/hooks/http-hook';
+import { useHttpClient } from '../components/hooks/http-hook';
 import AuthContext from '../components/context/auth-context';
 
 import BoxForm from '../components/UIElements/BoxForm'
@@ -10,83 +10,153 @@ import ErrorModal from '../components/modal/errormodal'
 
 const NovoProjeto = props => {
 
-    const [nome,setNome]=useState(null);
-    const [tecnologia,setTecnologia]=useState(null);
-    const [link,setLink]=useState(null);
-    const [image,setImage]=useState(null);
+    const { error, sendRequest, clearError } = useHttpClient();
+    const auth = useContext(AuthContext);
 
-    const {error,sendRequest,clearError} = useHttpClient();
-    const auth=useContext(AuthContext);
+    const initialState={
+        nome: "",
+        tecnologia: "",
+        link: "",
+        imagem: "",
 
-    const createMessage = async event => {
-        event.preventDefault();
-        try{
-            const formData= new FormData();
-            formData.append('nome',nome);
-            formData.append('tecnologia',tecnologia);
-            formData.append('link',link);
-            formData.append('image',image)
-
-            await sendRequest(
-                'http://localhost:5000/api/projeto/cadastrarprojeto',
-                'POST',
-                formData,{
-                    Authorization:'Bearer '+auth.token
-                }
-            )
-            
-        }catch(err){
-
-        }
+        nomeError: "",
+        tecnologiaError: "",
+        linkError: "",
+        imagemError: "",
 
     }
 
+    const [state, setState] = useState({...initialState})
+
+    const handleChange = e => {
+        const value = e.target.type === "text" ? e.target.value : e.target.files[0];
+        setState({
+            ...state,
+            [e.target.name]: value,
+        })
+    }
+
+    const validate = () => {
+        let isError = false;
+        const errors = {
+            nomeError: "",
+            tecnologiaError: "",
+            linkError: "",
+            imagemError: "",
+        };
+
+        if (state.nome.length === 0) {
+            isError = true;
+            errors.nomeError = "O nome não pode ser vazio";
+        }
+        if (state.link.length === 0) {
+            isError = true;
+            errors.linkError = "O link não pode ser vazio";
+        }
+        if (state.tecnologia.length === 0) {
+            isError = true;
+            errors.tecnologiaError = "Deve ter pelo menos uma tecnologia";
+        }
+        if (!state.imagem) {
+            isError = true;
+            errors.imagemError = "Arquivo inválido";
+        }
+        setState({
+            ...state,
+            ...errors
+        });
+        return isError;
+    }
+
+    const resetForm = ()=>{
+        document.getElementById("form").reset();
+        setState({...initialState});
+    }
+
+     const createMessage = async event => {
+        event.preventDefault();
+        if (!validate()) {
+            try {
+                const formData = new FormData();
+                formData.append('nome', state.nome);
+                formData.append('tecnologia', state.tecnologia);
+                formData.append('link', state.link);
+                formData.append('image', state.imagem)
+
+                await sendRequest(
+                        'http://localhost:5000/api/projeto/cadastrarprojeto',
+                        'POST',
+                        formData, {
+                        Authorization: 'Bearer ' + auth.token
+                    }
+                )
+                resetForm();
+            } catch (err) {
+
+            }
+        }
+        console.log(state);
+    }
+
+
+
     return (
         <React.Fragment>
-            <ErrorModal error={error} onClear={clearError}/>
+            <ErrorModal error={error} onClear={clearError} />
             <BoxForm label="Novo projeto">
-                <form encType="multipart/form-data" onSubmit={createMessage} >
+                <form id="form" encType="multipart/form-data" onSubmit={createMessage} >
                     <div className="div-form">
                         <label htmlFor="nome">Nome:</label>
-                        <input 
+                        <input
                             type="text"
-                            id="nome" 
+                            id="nome"
                             name="nome"
-                            onChange={e=>setNome(e.target.value)}
+                            onChange={handleChange}
                         />
+                        <div className="box-error">
+                            {state.nomeError}
+                        </div>
                     </div>
                     <div className="div-form">
                         <label htmlFor="tecnologia">Tecnologias:</label>
-                        <input 
-                            type="text" 
-                            id="tecnologia" 
+                        <input
+                            type="text"
+                            id="tecnologia"
                             name="tecnologia"
-                            onChange={e=>setTecnologia(e.target.value)}
+                            onChange={handleChange}
                         />
+                        <div className="box-error">
+                            {state.tecnologiaError}
+                        </div>
                     </div>
                     <div className="div-form">
                         <label htmlFor="link">Github:</label>
-                        <input 
-                            type="text" 
-                            id="link" 
+                        <input
+                            type="text"
+                            id="link"
                             name="link"
-                            onChange={e=>setLink(e.target.value)}
+                            onChange={handleChange}
                         />
+                        <div className="box-error">
+                            {state.linkError}
+                        </div>
                     </div>
                     <div className="div-form">
                         <label htmlFor="imagem">Imagem:</label>
-                        <input 
-                            type="file" 
-                            id="imagem" 
+                        <input
+                            type="file"
+                            id="imagem"
                             name="imagem"
-                            onChange={e=>setImage(e.target.files[0])}
+                            onChange={handleChange}
                         />
+                        <div className="box-error">
+                            {state.imagemError}
+                        </div>
                     </div>
                     <button className="btn-cad-projeto">Salvar</button>
                 </form>
             </BoxForm>
-        </React.Fragment> 
-    )   
+        </React.Fragment>
+    )
 }
-
 export default NovoProjeto;

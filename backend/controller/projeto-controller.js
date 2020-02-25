@@ -17,7 +17,7 @@ const createProjeto = async (req,res,next)=>{
         nome,
         tecnologia,
         link,
-        image:req.file.path
+        imagem:req.file.path
     })
     if(!createdProjeto){
         const error=new HttpError('Projeto não foi criado, tente de novo!',500);
