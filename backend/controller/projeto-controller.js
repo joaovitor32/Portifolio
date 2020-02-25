@@ -35,4 +35,24 @@ const createProjeto = async (req,res,next)=>{
     res.status(201).json({projeto:createProjeto});
 }
 
+const getProjetos= async (req,res,next)=>{
+
+    let projetos;
+
+    try{
+      projetos=await Projeto.find();
+    }catch(err){
+      const error= new HttpError('Busca por projetos falhou',500);
+      return  next(error);
+    }
+
+    if(!projetos||projetos.length===0){
+      const error=new HttpError('Não existe nenhum projeto cadastrado',404);
+      return next(error);
+    }
+    res.status(200).json({projetos:projetos.map(projeto=>projeto.toObject({getters:true}))});
+
+}
+
 exports.createProjeto=createProjeto;
+exports.getProjetos=getProjetos;

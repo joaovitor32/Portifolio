@@ -18,6 +18,7 @@ router.post('/cadastrarprojeto',
     ],
     projetoController.createProjeto
 )
+router.get('/getprojetos',projetoController.getProjetos);
 
 
 module.exports=router;
