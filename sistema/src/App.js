@@ -36,7 +36,7 @@ function App() {
   }else{
     routes=(
       <Switch>
-        <Route path="/login" exact>
+        <Route path="/login" >
           <Login/>
         </Route>
         <Redirect to="/login" />

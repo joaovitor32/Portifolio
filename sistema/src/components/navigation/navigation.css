@@ -1,16 +1,12 @@
 body,
 ul,
+li,
 p {
   margin: 0px;
   padding: 0px;
   list-style: none;
   font-size: 1.2rem;
   font-family: Arial;
-}
-li{
-    list-style: none;
-    margin-left:1rem;
-    padding: 1%;
 }
 .header{
     background-color: #343a40;
@@ -28,6 +24,8 @@ li{
 .menu>li>*{
     text-decoration: none;
     color: white;
+    margin-left:1rem;
+    padding: 1%;
 }
 .turnoff{
     width:10%;
