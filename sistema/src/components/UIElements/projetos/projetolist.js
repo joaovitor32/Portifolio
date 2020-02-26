@@ -20,11 +20,13 @@ const ProjetosList = props => {
                 {
                     props.items.map(projeto =>
                         <ProjetoItem
-                            key={props._id}
+                            key={projeto._id}
+                            _id={projeto._id}
                             nome={projeto.nome}
                             link={projeto.link}
                             tecnologia={projeto.tecnologia}
                             imagem={projeto.imagem}
+                            reloadList={props.reloadList}
                         />
                     )}
             </section>
