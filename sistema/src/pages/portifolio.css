@@ -1,10 +1,18 @@
 .button-cad-projeto{
     position: absolute;
-    bottom:4%;
+    margin-bottom:2%;
     right:4%;
     border-radius:50%;
     background-color:#343a40;
     padding:1%;
     border:none;
     outline:none;
+    z-index: 1;
+}
+
+@media (max-width:648px){
+    .button-cad-projeto{
+        margin-top:1rem;
+        margin-bottom:1rem;
+    }
 }
