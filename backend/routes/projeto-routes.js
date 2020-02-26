@@ -19,6 +19,7 @@ router.post('/cadastrarprojeto',
     projetoController.createProjeto
 )
 router.get('/getprojetos',projetoController.getProjetos);
+router.delete('/:pid',projetoController.deleteProjeto)
 
 
 module.exports=router;

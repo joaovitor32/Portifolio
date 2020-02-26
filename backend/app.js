@@ -13,10 +13,6 @@ const HttpError=require('./models/httperror')
 
 const app=express();
 
-
-/*Entregando arquivos estáticos via Express*/
-app.use('/uploads/images', express.static(path.join('uploads', 'images')));
-
 app.use(bodyParser.json());
 
 app.use((req,res,next)=>{
@@ -29,6 +25,10 @@ app.use((req,res,next)=>{
 
   next();
 })
+
+
+/*Entregando arquivos estáticos via Express*/
+app.use('/uploads/images', express.static(path.join('uploads', 'images')));
 
 app.use('/api/messages',messageRoutes);
 app.use('/api/user',userRoutes);
