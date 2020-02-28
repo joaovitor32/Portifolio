@@ -9,7 +9,7 @@ import Portifolio from './pages/portifolio';
 import NovoProjeto from './pages/NovoProjeto';
 
 import Login from './pages/login';
-import Navigation from './components/navigation/navigation'
+import Navigation from './components/UIElements/navigation/navigation'
 
 
 function App() {

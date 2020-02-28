@@ -5,7 +5,7 @@ import Github from './icons/github.svg'
 import Cross from './icons/cross.svg'
 import Edit from './icons/edit.svg'
 
-import ErrorModal from '../../modal/errormodal'
+import ErrorModal from '../modal/errormodal'
 import Card from './../Card'
 
 import { useHttpClient } from '../../hooks/http-hook'
@@ -35,7 +35,7 @@ const ProjetoItem = props => {
     return (
         <React.Fragment  >
             <ErrorModal error={error} clearError={clearError} />
-            <Card>
+            <Card type="box-projeto">
                 <div key={props.key} className="flexbox-item">
                     <div className="box-imagem-projeto">
                         <img className="imgProjeto" src={`http://localhost:5000/${props.imagem}`} alt={props.nome} />

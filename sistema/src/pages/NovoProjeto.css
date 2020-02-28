@@ -13,6 +13,7 @@
     border-radius:15px;
     border:1px solid #343a40;
     padding:1%;
+    width:60%;
     outline:none;
 }
 .btn-cad-projeto{
@@ -45,3 +46,8 @@ input[type=file]::-webkit-file-upload-button {
     transition: 0.5s;
 }
 ---*/
+@media (max-width:800px){
+    .div-form> input{
+        width:80%;
+    }
+}

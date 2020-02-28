@@ -4,7 +4,7 @@ import { useHttpClient } from '../components/hooks/http-hook';
 import AuthContext from '../components/context/auth-context';
 import { useHistory } from 'react-router-dom'
 
-import ErrorModal from '../components/modal/errormodal';
+import ErrorModal from '../components/UIElements/modal/errormodal';
 import ProjetosList from '../components/UIElements/projetos/projetolist'
 import LoadingSpinner from '../components/UIElements/LoadingSpinner';
 

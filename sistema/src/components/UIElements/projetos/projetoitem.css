@@ -9,7 +9,7 @@
 
 .box-imagem-projeto{
     background-color: rgba(52,58,64,0.75);
-    padding:1rem;
+    padding:0.5rem;
 }
 .imgProjeto{
     border-radius:2rem;
@@ -25,11 +25,24 @@ hr{
     margin:1%;
     color:rgb(52,58,64)
 }
-
+.container-actions{
+    margin-bottom:0.5rem;
+}
 .img-icon{
-    width:2.5rem;
-    height: 2.5rem;
-    padding:2%;
+    width:2rem;
+    height: 2rem;
+    padding:1rem;
+    margin:0 0.5rem;
+    vertical-align: middle;
+
+}
+.img-icon:hover{
+    background-color:rgba(52,58,64,0.4);
+    transition:0.5s;
+
+    /*--Estudar sobre---*/
+    clip-path: circle(50% at center);
+    -webkit-clip-path: circle(50% at center);
 }
 @media (max-width:900px){
     .flexbox-item{

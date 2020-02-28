@@ -6,7 +6,7 @@ import { useHttpClient } from '../components/hooks/http-hook';
 import AuthContext from '../components/context/auth-context';
 
 import BoxForm from '../components/UIElements/BoxForm'
-import ErrorModal from '../components/modal/errormodal'
+import ErrorModal from '../components/UIElements/modal/errormodal'
 
 const NovoProjeto = props => {
 
@@ -103,7 +103,7 @@ const NovoProjeto = props => {
     return (
         <React.Fragment>
             <ErrorModal error={error} onClear={clearError} />
-            <BoxForm label="Novo projeto">
+            <BoxForm  label="Novo projeto">
                 <form id="form" encType="multipart/form-data" onSubmit={createMessage} >
                     <div className="div-form">
                         <label htmlFor="nome">Nome:</label>

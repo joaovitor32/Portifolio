@@ -7,7 +7,7 @@ import Card from '../UIElements/Card'
 const BoxForm = props => {
 
     return (
-        <Card>
+        <Card type="box-cadastro">
             <div className="container-form">
                 <div className="box-form">
                     <div className="title">

@@ -4,7 +4,7 @@ import './login.css';
 import { VALIDATOR_REQUIRE, VALIDATOR_EMAIL } from './../components/util/validators';
 import { useHttpClient } from '../components/hooks/http-hook'
 import AuthContext from '../components/context/auth-context'
-import ErrorModal from '../components/modal/errormodal'
+import ErrorModal from '../components/UIElements/modal/errormodal'
 
 const Login = props => {
 
@@ -40,7 +40,7 @@ const Login = props => {
     return (
         <React.Fragment>
             <ErrorModal error={error} onClear={clearError} /> 
-            <Card>
+            <Card type="box-login">
                 <div>
                     <h3>Login:</h3>
                     <div className="form">

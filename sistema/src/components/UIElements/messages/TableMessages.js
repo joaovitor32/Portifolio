@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 
 import './TableMessages.css';
-import Trash from './icons/trash.svg'
+import Trash from '../icons/trash.svg'
 
-import { useHttpClient } from '../hooks/http-hook'
-import AuthContext from '../context/auth-context'
+import { useHttpClient } from '../../hooks/http-hook'
+import AuthContext from '../../context/auth-context'
 
 const ContentTable = props => {
 
