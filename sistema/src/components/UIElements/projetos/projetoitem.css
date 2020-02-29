@@ -32,9 +32,7 @@ hr{
     width:2rem;
     height: 2rem;
     padding:1rem;
-    margin:0 0.5rem;
-    vertical-align: middle;
-
+    margin:0 0.25rem;
 }
 .img-icon:hover{
     background-color:rgba(52,58,64,0.4);
@@ -48,5 +46,32 @@ hr{
     .flexbox-item{
         flex:1 1 260px;
     }
+}
+/*------------ Formulário de alteração de dados -----------*/
 
+.box-inputs>form>div{
+    margin:1rem 0rem;
+}
+.box-inputs>form>div>label{
+    color:rgb(52,58,64);
+    font-weight: 900;
+    margin-right: 0.5rem;
+}
+.box-inputs>form>div>input{
+    background-color: transparent;
+    border:1px solid rgb(52,58,64);
+    outline:none;
+    border-radius: 1rem;
+    padding:1%;
+    font-weight: bold;
+    color:rgb(52,58,64);
+}
+button{
+    color:none;
+    background-color: transparent;
+    outline: none;
+    border:none;
+}
+.box-error>*{
+    color:red;
 }
