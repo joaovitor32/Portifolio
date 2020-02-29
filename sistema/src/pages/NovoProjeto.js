@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 
-import './NovoProjeto.css'
+import './form.css'
 
 import { useHttpClient } from '../components/hooks/http-hook';
 import AuthContext from '../components/context/auth-context';
@@ -153,7 +153,7 @@ const NovoProjeto = props => {
                             {state.imagemError}
                         </div>
                     </div>
-                    <button className="btn-cad-projeto">Salvar</button>
+                    <button className="btn-cad">Salvar</button>
                 </form>
             </BoxForm>
         </React.Fragment>
