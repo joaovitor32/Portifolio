@@ -8,6 +8,7 @@ const mongoose=require('mongoose');
 const messageRoutes=require('./routes/message-routes');
 const userRoutes=require('./routes/user-routes');
 const projetoRoutes=require('./routes/projeto-routes');
+const cursoRoutes=require('./routes/curso-routes');
 
 const HttpError=require('./models/httperror')
 
@@ -33,6 +34,7 @@ app.use('/uploads/images', express.static(path.join('uploads', 'images')));
 app.use('/api/messages',messageRoutes);
 app.use('/api/user',userRoutes);
 app.use('/api/projeto',projetoRoutes);
+app.use('/api/curso',cursoRoutes)
 
 app.use((req, res, next) => {
   const error = new HttpError('Could not find this route.', 404);
