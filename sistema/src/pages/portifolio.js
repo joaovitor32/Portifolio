@@ -8,7 +8,7 @@ import ErrorModal from '../components/UIElements/modal/errormodal';
 import ProjetosList from '../components/UIElements/projetos/projetolist'
 import LoadingSpinner from '../components/UIElements/LoadingSpinner';
 
-import './portifolio.css'
+import './button.css'
 
 import Add from './icons/plus.png'
 
@@ -47,7 +47,7 @@ const Portifolio = props => {
             {isLoading && <LoadingSpinner className="center" />}
             {!isLoading && loadedProjetos && <ProjetosList reloadList={fetchProjetos} items={loadedProjetos} />}
             <div className="button-div">
-                {!isLoading && <button type="button" onClick={() => history.push('/novoprojeto')} className="button-cad-projeto"><img src={Add} alt="novo projeto" /></button>}
+                {!isLoading && <button type="button" onClick={() => history.push('/novoprojeto')} className="button-cad"><img src={Add} alt="novo projeto" /></button>}
             </div>
         </React.Fragment>
     )

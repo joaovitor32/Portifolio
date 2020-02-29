@@ -66,10 +66,10 @@ const ProjetoItem = props => {
         return isError;
     }
 
-    const resetForm = () => {
+    /*const resetForm = () => {
         document.getElementById('form').reset();
         setState({ ...initialState });
-    }
+    }*/
 
     const updateHandler = async event => {
         event.preventDefault();

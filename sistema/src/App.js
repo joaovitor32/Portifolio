@@ -7,10 +7,11 @@ import AuthContext from './components/context/auth-context';
 import Mensagem from './pages/mensagens';
 import Portifolio from './pages/portifolio';
 import NovoProjeto from './pages/NovoProjeto';
+import Curso from './pages/curso';
+import NovoCurso from './pages/NovoCurso';
 
 import Login from './pages/login';
 import Navigation from './components/UIElements/navigation/navigation'
-
 
 function App() {
   
@@ -29,6 +30,12 @@ function App() {
         </Route>
         <Route path="/novoprojeto" exact>
           <NovoProjeto/>
+        </Route>
+        <Route path="/cursos" exact>
+          <Curso/>
+        </Route>
+        <Route path="/novocurso" exact>
+          <NovoCurso/>
         </Route>
         <Redirect to="/mensagem"/> 
       </Switch>
