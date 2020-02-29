@@ -9,6 +9,15 @@ const router = express.Router();
 //Pra testar rota no Postman retirar Check Auth
 router.use(checkAuth);
 
+router.patch('/:pid',
+    [
+        check('nome').not().isEmpty(),
+        check('tecnologia').not().isEmpty(),
+        check('link').not().isEmpty(),
+    ],
+    projetoController.updateProjeto 
+);
+
 router.post('/cadastrarprojeto',
     fileUpload.single('image'),
     [
@@ -20,6 +29,5 @@ router.post('/cadastrarprojeto',
 )
 router.get('/getprojetos',projetoController.getProjetos);
 router.delete('/:pid',projetoController.deleteProjeto)
-
 
 module.exports=router;
