@@ -44,10 +44,11 @@ const Portifolio = props => {
     return (
         <React.Fragment>
             <ErrorModal error={error} onClear={clearError} />
-            {isLoading && <LoadingSpinner className="center"/>}
+            {isLoading && <LoadingSpinner className="center" />}
             {!isLoading && loadedProjetos && <ProjetosList reloadList={fetchProjetos} items={loadedProjetos} />}
-            {!isLoading&&<button onClick={() => history.push('/novoprojeto')} className="button-cad-projeto"><img src={Add} alt="novo projeto" /></button>}
-
+            <div className="button-div">
+                {!isLoading && <button type="button" onClick={() => history.push('/novoprojeto')} className="button-cad-projeto"><img src={Add} alt="novo projeto" /></button>}
+            </div>
         </React.Fragment>
     )
 }
