@@ -1,5 +1,5 @@
 .button-cad{
-    position:absolute;
+    position: fixed;
     bottom:4%;
     right:4%;
     border-radius:50%;
@@ -13,13 +13,14 @@
     .button-cad{
         position: relative;
         bottom:0%;
+        right: 0%;
         padding:1rem;
         margin:1rem 0rem;
-        margin-left:2rem;
     }
     .button-div{
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
     }
 }

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 
-import './projetoitem.css';
+import '../items/item.css'
 
 import Github from './icons/github.svg'
 import Cross from './icons/cross.svg'
@@ -117,10 +117,10 @@ const ProjetoItem = props => {
     return (
         <React.Fragment  >
             <ErrorModal error={error} clearError={clearError} />
-            <Card type="box-projeto">
+            <Card type="box">
                 <div key={props.key} className="flexbox-item">
-                    <div className="box-imagem-projeto">
-                        <img className="imgProjeto" src={`http://localhost:5000/${props.imagem}`} alt={props.nome} />
+                    <div className="box-imagem">
+                        <img className="img" src={`http://localhost:5000/${props.imagem}`} alt={props.nome} />
                     </div>
                     <hr />
                     {updateState &&

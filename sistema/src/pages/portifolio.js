@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useContext, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 import { useHttpClient } from '../components/hooks/http-hook';
-import AuthContext from '../components/context/auth-context';
 import { useHistory } from 'react-router-dom'
 
 import ErrorModal from '../components/UIElements/modal/errormodal';
@@ -17,7 +16,6 @@ const Portifolio = props => {
     const [loadedProjetos, setProjetos] = useState(null);
 
     const { error, sendRequest, clearError, isLoading } = useHttpClient();
-    const auth = useContext(AuthContext);
     const history = useHistory();
 
     const fetchProjetos = useCallback(async () => {
@@ -27,15 +25,13 @@ const Portifolio = props => {
                 'http://localhost:5000/api/projeto/getprojetos',
                 'GET',
                 null,
-                {
-                    Authorization: `Bearer ${auth.token}`
-                }
+                {}
             )
             setProjetos(responseData.projetos);
         } catch (err) {
 
         }
-    }, [auth, sendRequest])
+    }, [sendRequest])
 
     useEffect(() => {
         fetchProjetos();

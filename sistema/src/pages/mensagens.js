@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useContext, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 import { useHttpClient } from '../components/hooks/http-hook';
-import AuthContext from '../components/context/auth-context'
 
 import ContentTable from '../components/UIElements/messages/TableMessages'
 import Card from '../components/UIElements/Card'
@@ -13,7 +12,6 @@ const Mensagem = props => {
 
 
     const { isLoading, sendRequest, error } = useHttpClient();
-    const auth = useContext(AuthContext);
     const [loadedMessages, setLoadedMessages] = useState();
 
     const fetchMessages = useCallback(async () => {
@@ -23,19 +21,16 @@ const Mensagem = props => {
                 'http://localhost:5000/api/messages/listamensagens'
                 ,
                 "GET",
-                null
-                , {
-                    "Content-Type": "application/json",
-                    authorization: 'Bearer ' + auth.token
-
-                })
+                null, 
+                {}
+                )
 
             setLoadedMessages(responseData.messages);
 
         } catch (err) {
 
         }
-    }, [auth, sendRequest])
+    }, [sendRequest])
 
     useEffect(
         () => {
