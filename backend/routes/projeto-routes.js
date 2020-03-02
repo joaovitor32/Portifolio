@@ -6,6 +6,8 @@ const checkAuth=require('../middleware/checkAuth');
 
 const router = express.Router();
 
+
+router.get('/getprojetos',projetoController.getProjetos)
 //Pra testar rota no Postman retirar Check Auth
 router.use(checkAuth);
 
@@ -27,7 +29,7 @@ router.post('/cadastrarprojeto',
     ],
     projetoController.createProjeto
 )
-router.get('/getprojetos',projetoController.getProjetos);
+;
 router.delete('/:pid',projetoController.deleteProjeto)
 
 module.exports=router;

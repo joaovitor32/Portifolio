@@ -6,7 +6,16 @@ const checkAuth=require('../middleware/checkAuth');
 
 const router=express.Router();
 
+router.get('/getcursos',cursoController.getCursos);
+
 router.use(checkAuth);
+
+router.delete('/:pid',
+    check('nome').not().isEmpty(),
+    check('descricao').not().isEmpty()
+,cursoController.deleteCurso)
+
+router.patch('/:pid',cursoController.updateCurso);
 
 router.post('/createcurso',
     fileUpload.single('imagem'),
@@ -17,6 +26,6 @@ router.post('/createcurso',
     cursoController.createCurso
 )
 
-router.get('/getcursos',cursoController.getCursos);
+
 
 module.exports=router;

@@ -72,7 +72,7 @@ const deleteProjeto = async (req, res, next) => {
     return next(error);
   }
 
-  const imagePath = projeto.image;
+  const imagePath = projeto.imagem;
   fs.unlink(imagePath, err => {
     console.log(err);
   })
