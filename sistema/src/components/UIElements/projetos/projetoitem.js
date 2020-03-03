@@ -118,7 +118,7 @@ const ProjetoItem = props => {
         <React.Fragment  >
             <ErrorModal error={error} clearError={clearError} />
             <Card type="box">
-                <div key={props.key} className="flexbox-item">
+                <div className="flexbox-item">
                     <div className="box-imagem">
                         <img className="img" src={`http://localhost:5000/${props.imagem}`} alt={props.nome} />
                     </div>

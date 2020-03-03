@@ -23,11 +23,9 @@ const CursoItem = props => {
     const initialState = {
         nome: "",
         descricao: "",
-        imagem: "",
 
         nomeError: "",
         descricaoError: "",
-        imagemError: "",
     }
 
     const [state, setState] = useState({ ...initialState });
@@ -56,10 +54,6 @@ const CursoItem = props => {
         if (state.descricao.length === 0) {
             isError = true;
             errors.descricaoError = "A descrição não pode ser vazia"
-        }
-        if (!state.imagem) {
-            isError = true;
-            errors.imagem = "Deve ter pelo menos uma imagem"
         }
         setState({
             ...state,
@@ -107,15 +101,15 @@ const CursoItem = props => {
                         'nome': state.nome,
                         'descricao': state.descricao
                     }),
-                        {
-                            'Content-Type': 'application/json',
-                            Authorization: 'Bearer ' + auth.token
-                        }
+                    {
+                        'Content-Type': 'application/json',
+                        Authorization: 'Bearer ' + auth.token
+                    }
 
-                )
+                )  
                 props.reloadList();
             } catch (err) {
-                
+
             }
         }
     }
@@ -138,7 +132,7 @@ const CursoItem = props => {
                     </div>
                     }
                     {updateState && <div className="box-inputs">
-                        <form id="form" onSubmit={updateHandler}>
+                        <form id="form"  onSubmit={updateHandler}>
                             <div>
                                 <label htmlFor="nome">Nome:</label>
                                 <input
