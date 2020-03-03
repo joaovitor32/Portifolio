@@ -9,12 +9,12 @@ import Home from './pages/home/Home';
 import Projetos from './pages/projetos/projetos'
 import Contato from './pages/contato/contato'
 
-import MainNavigation from './components/navigation/MainNavigation'
+import Navigation from './components/navigation/Navigation'
 
 function App() {
   return (
     <Router>
-      <MainNavigation/>
+      <Navigation/>
       <main>
         <Switch>
           <Route path="/home" exact>
