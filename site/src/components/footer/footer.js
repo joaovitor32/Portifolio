@@ -28,7 +28,7 @@ const Footer = props => {
                             <h4 className="mt-lg-0 mt-sm-4">Endereço</h4>
                             <p><img className="icons" src={home} alt="icon" />Rua José Aristides Pereira, Solares, Nova Friburgo - Lote 13</p>
                             <p className="mb-0"><img className="icons" alt="icon" src={phone} />(541) 754-3010</p>
-                            <p><img className="icons" alt="icon" src={mail}/>joãovitormunizlopes@gmail.com.com</p>
+                            <p><img className="icons" alt="icon" src={mail}/>joãovitormunizlopes@gmail.com</p>
                         </div>
                     </div>
                 </div>
