@@ -43,10 +43,18 @@ hr{
         margin-left:auto;
         margin-right: auto;
     }
+    .imgPerfil{
+        height: 100%;
+        width: 90%;
+    }
     .boxIcons>img{
         margin-top:1%;
     }
     hr{
-        width: 100%;
+        width: 90%;
     }
+    .hTagsBox>h5,.hTagsBox>h2{
+        text-align: center;
+    }
+    
 }

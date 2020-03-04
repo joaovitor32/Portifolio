@@ -20,7 +20,7 @@ const Perfil = props=>{
         <React.Fragment>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6 col-xs-12">
+                    <div className="col-md-6 col-sm-12" >
                         <div className="hTagsBox">
                             <h2>Aspirante a programador!</h2>
                             <h5>Entusiasta do desenvolvimento Web e Mobile</h5>
@@ -38,7 +38,7 @@ const Perfil = props=>{
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6 col-xs-12">
+                    <div className="col-md-6 col-sm-12">
                         <img className="imgPerfil" alt="perfil" src={perfil}/>
                     </div>
                 </div>
