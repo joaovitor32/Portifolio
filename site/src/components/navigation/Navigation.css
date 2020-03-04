@@ -52,8 +52,8 @@ header {
     }
     .links-sites>a>img {
         vertical-align: middle;
-        height: 3.5rem;
-        width: 2.5rem;
-        padding: 0rem 0.5rem;
+        height: 4rem;
+        width: 4rem;
+        padding: 0rem 1rem;
     }
 }
