@@ -17,7 +17,7 @@ const Navigation = props => {
                     <li><NavLink type="text" to="/contato" nome="Contatos" >Contato</NavLink></li>
                 </ul>
             </nav>
-            <div className="links" >
+            <div className="links-sites" >
                 <a href="https://www.facebook.com/joao.buzina"><img alt="facebook" src={facebook} /></a>
                 <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-muniz-lopes-3545a3154/"><img alt="linkedin" src={linkedin} /></a>
                 <a href="https://github.com/joaovitor32"><img className="aRefs" alt="github" src={github} /></a>
