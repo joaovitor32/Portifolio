@@ -1,0 +1,21 @@
+.background{
+    background-image: url('./images/back.jpg');
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;   
+}
+/*-----------Fade Effect--------------*/
+
+.fadeIn{
+    transition: opacity 2s;
+    opacity: 1;
+}
+.fadeOut{
+    opacity: 0;
+    pointer-events:none;
+}
+@media (max-width:600px){
+    .background{
+        background-image: none;
+    }
+}
