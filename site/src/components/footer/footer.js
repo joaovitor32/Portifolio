@@ -6,6 +6,7 @@ import mail from './imagens/mail.svg'
 import phone from './imagens/phone.svg'
 import home from './imagens/home.svg'
 import uerj from './imagens/uerj.svg'
+import serra from './imagens/serra.png'
 
 const Footer = props => {
     return (
@@ -18,9 +19,10 @@ const Footer = props => {
                             <p className="pr-5 text-white-50">Em busca de projetos que tenham embutido conhecimento agregado </p>
                             
                         </div>
-                        <div className="col-lg-4 col-xs-12 links">
+                        <div className="col-lg-4 col-xs-12 ">
                             <h4 className="mt-lg-0 mt-sm-3">Links</h4>
-                            <ul className="m-0 p-0">
+                            <ul className="ul-links-footer">
+                            <li><a href="https://serrajr.eng.br/"><img className="logoSerra" src={serra} alt="logo serra"/></a></li>
                                 <li><a href="http://www.iprj.uerj.br/"><img className="logoUerj" src={uerj} alt="logo uerj"/></a></li>
                             </ul>
                         </div>
