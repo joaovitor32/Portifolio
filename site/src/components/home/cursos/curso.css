@@ -1,0 +1,31 @@
+.box-cursos{
+    display: block;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.box-cursos>p{
+    font-weight: 1300;
+    margin-top:1rem;
+    margin-bottom:2rem;
+    font-size: 1.6rem;
+    color:#343a40;
+}
+
+.box-cursos-item{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:1rem;
+    max-width: 300px;
+}
+
+@media (max-width:800px) and (min-width:500px){
+    .box-cursos-item{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width:500px){
+    .box-cursos-item{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

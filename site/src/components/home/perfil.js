@@ -3,23 +3,23 @@ import React from 'react';
 import './perfil.css'
 
 import perfil from './images/perfil.jpg'
-import Footer from './../footer/footer'
-
 import php from './images/php.svg'
 import angular from './images/angular.png'
 import node from './images/node.png'
 import javascript from './images/js.png'
 import html from './images/html.png'
-import css from './images/css.jpg'
+import css from './images/css.png'
 import mysql from './images/mysql.png'
 import mongo from './images/mongo.jpg'
 import react from './images/react.png'
 
 const Perfil = props=>{
+    
+   
     return (
         <React.Fragment>
-            <div className="container">
-                <div className="row">
+            <div className="container container-perfil">
+                <div className="row row-display-home">
                     <div className="col-md-6 col-sm-12" >
                         <div className="hTagsBox">
                             <h2>Aspirante a programador!</h2>
@@ -43,7 +43,6 @@ const Perfil = props=>{
                     </div>
                 </div>
             </div>
-            <Footer/>
         </React.Fragment>
     )
 }
