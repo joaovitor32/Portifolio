@@ -1,13 +1,15 @@
 .background{
+    display: block;
     background-image: url('./images/back.jpg');
     width:100%;
+    height: 600px;
     background-repeat: no-repeat;
     background-size: 100% 100%;   
 }
 /*-----------Fade Effect--------------*/
 
 .fadeIn{
-    transition: opacity 2s;
+    transition: opacity 1s;
     opacity: 1;
 }
 .fadeOut{
