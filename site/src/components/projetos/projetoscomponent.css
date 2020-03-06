@@ -1,0 +1,23 @@
+.box-projetos{
+    display: block;
+    justify-content: flex-start;
+    text-align: left;
+    align-items: flex-start;
+}
+.box-projetos>p{
+    margin-top:1rem;
+    margin-left:4rem;
+    margin-bottom:1rem;
+    font-weight: 1200;
+    font-size:1.8em;
+    color:#343a40;
+}
+.box-projetos-item{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    margin:0 auto;
+    max-width: 1600px;
+}
