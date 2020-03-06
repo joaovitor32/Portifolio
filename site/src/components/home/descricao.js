@@ -8,7 +8,7 @@ import Serra3 from './images/serra3.jpg'
 
 const Descricao = props => {
     return (
-        <div style={{"backgroundColor": "#343a40",'height':'auto','boxShadow':'0 8px 10px rgba(0,0,0,0.26)'}}>
+        <div className="descricao-content">
             <div className="box-descricao">
                 <p>
                     Iniciei no mundo da programação com 19 anos por meio do Instituto Politécnico

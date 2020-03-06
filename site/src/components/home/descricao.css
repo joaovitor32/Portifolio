@@ -11,7 +11,11 @@
     font-weight: 1.1em;
     padding: 2rem;
 }
-
+.descricao-content{
+    background-color: #343a40;
+    height:auto;
+    box-shadow:0 8px 10px rgba(0,0,0,0.26);
+}
 /*-------------Images-------------*/
 
 .box-images-descricao {
@@ -31,6 +35,9 @@
 }
 
 @media (max-width:700px) {
+    .descricao-content{
+        margin-top:1rem
+    }
     .box-descricao>p {
         width: 95%;
     }
