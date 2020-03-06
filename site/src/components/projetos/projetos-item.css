@@ -1,0 +1,49 @@
+.card-projeto{
+    position: relative;
+    box-shadow:0px 2px 8px black;
+    width: 22rem;
+    height: auto;
+    margin:1rem 2rem;
+    border-radius:1rem;
+    background-color: rgb(52, 58, 64);
+}
+.hr-projeto{
+    border:1px solid #f5f5f5;
+    width:85%;
+}
+.imagem-projeto{
+    width: 100%;
+    border-top-left-radius : 1rem;
+    border-radius: 1rem;
+    border-top-right-radius : 1rem;
+    height: 14rem;
+}
+.description-projeto>h5{
+    color:#f5f5f5;
+    padding:4%
+}
+.description-projeto{
+    position: absolute;
+    top:0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    background-color:rgba(52, 58, 64, 0.8);
+    color:#fff;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 1rem;
+    transition: opacity .5s, visibility.5s;
+}
+.card-projeto:hover .description-projeto{
+    visibility: visible;
+    opacity:1;
+    border-radius:1rem;
+}
+.link-ico{
+    width: 30%;
+    height: 30%;
+    object-fit: contain;
+    padding-bottom:1.5rem
+
+}
