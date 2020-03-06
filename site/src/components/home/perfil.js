@@ -24,7 +24,7 @@ const Perfil = props=>{
                         <div className="hTagsBox">
                             <h2>Aspirante a programador!</h2>
                             <h5>Entusiasta do desenvolvimento Web e Mobile</h5>
-                            <hr></hr>
+                            <hr className="hr-perfil"></hr>
                             <div className="boxIcons">
                                 <img src={php} alt='php'/>
                                 <img src={angular} alt='angular'/>

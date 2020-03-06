@@ -12,7 +12,7 @@
     align-items: center;
     text-align: center;
 }
-hr{
+.hr-perfil{
     border: 1px solid #343a40;
     width: 120%;
 }
@@ -48,10 +48,6 @@ hr{
 }
 
 @media only screen and (max-width: 600px) {
-    .container{
-        margin-top:2rem;
-        
-    }
     .hTagsBox>h5,.hTagsBox>h2{
         text-align: center;
     }
@@ -61,20 +57,21 @@ hr{
         margin-right: auto;
     }
     .imgPerfil{
-        height: 100%;
-        width: 90%;
-        margin:0 auto;
+        height: 90%;
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:1rem;
+        margin-bottom:1rem;
     }
     .boxIcons>img{
         margin-top:1%;
     }
-    hr{
+    .hr-perfil{
         width: 90%;
     }
     .hTagsBox>h5,.hTagsBox>h2{
         text-align: center;
     }
-    .container-perfil,.row-display-home{
-        display:inline;
-    }
+    
 }
