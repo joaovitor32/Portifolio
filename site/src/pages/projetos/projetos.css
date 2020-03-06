@@ -1,0 +1,8 @@
+.fadeIn{
+    transition: opacity 1s;
+    opacity: 1;
+}
+.fadeOut{
+    opacity: 0;
+    pointer-events:none;
+}
