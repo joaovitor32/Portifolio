@@ -25,6 +25,10 @@ ul{
     width: 130%;
     height: 130%;
 }
+.logoAcademind{
+    width: 80%;
+    height: 80%;
+}
 .ul-links-footer{
     display: flex;
     justify-content: center;
@@ -32,8 +36,18 @@ ul{
     align-items: center;
 }
 
-@media only screen and (max-width: 600px) {
-    .footer{
-        width: 100%;
+@media (max-width:768px) {
+    .logoUerj{
+        width: 30%;
+        height: 30%;
+    }
+    .logoSerra{
+      
+        width: 110%;
+        height: 110%;
+    }
+    .logoAcademind{
+        width: 60%;
+        height: 60%;
     }
 }
