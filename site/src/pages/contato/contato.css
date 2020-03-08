@@ -1,0 +1,6 @@
+.background-contato{
+    background-image: url('./background.jpeg');
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+}

@@ -1,30 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React , { useCallback, useState, useEffect } from'react';
+
+import {useHttpClient} from '../../components/hooks/http-hooks'
 
 import './projetos.css';
 
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner'
 import ProjetosComponent from '../../components/projetos/projetoscomponent';
 import Footer from '../../components/footer/footer';
 
-import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner'
-
 const Projetos = props => {
 
-    const [load, setLoad] = useState(true);
+    const [loadedProjetos, setProjetos] = useState(null);
+    const { sendRequest, isLoading } = useHttpClient();
+
+    const fetchProjetos = useCallback(async () => {
+
+        setProjetos(null);
+        try {
+            const responseData = await sendRequest(
+                'http://localhost:5000/api/projeto/getprojetos',
+                'GET',
+                null,
+                {}
+            )
+            setProjetos(responseData.projetos);
+        } catch (err) {
+
+        }
+
+    }, [sendRequest])
 
     useEffect(() => {
-        setLoad(false);
-    }, [setLoad])
+        fetchProjetos();
+    }, [fetchProjetos])
+
 
     return (
 
         <React.Fragment>
-            {load && <LoadingSpinner />}
-            {!load &&
-                <React.Fragment>
-                    <ProjetosComponent />
-                    <Footer />
-                </React.Fragment>
-            }
+            <React.Fragment>
+                {isLoading && <LoadingSpinner/>}
+                {!isLoading && loadedProjetos&&<ProjetosComponent projetos={loadedProjetos} />}
+                {!isLoading&&<Footer />}
+            </React.Fragment>
         </React.Fragment>
 
     )

@@ -2,9 +2,13 @@ import React from 'react';
 
 import FormContato from '../../components/forms/contato'
 
-const Contato = props=>{
+import './contato.css';
+
+const Contato = props => {
     return (
-        <FormContato></FormContato>
+        <div className="background-contato">
+            <FormContato />
+        </div>
     )
 }
 
