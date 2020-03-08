@@ -1,42 +1,18 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React  from 'react';
 
 import ProjetoItem from './projetos-item';
 
 import './projetoscomponent.css';
-import { useHttpClient } from '../hooks/http-hooks';
-
 
 const ProjetosComponent = props => {
 
-    const [loadedProjetos, setProjetos] = useState(null);
-    const { sendRequest, isLoading } = useHttpClient();
-
-    const fetchProjetos = useCallback(async () => {
-
-        setProjetos(null);
-        try {
-            const responseData = await sendRequest(
-                'http://localhost:5000/api/projeto/getprojetos',
-                'GET',
-                null,
-                {}
-            )
-            setProjetos(responseData.projetos);
-        } catch (err) {
-
-        }
-
-    }, [sendRequest])
-
-    useEffect(() => {
-        fetchProjetos();
-    }, [fetchProjetos])
-
     return (
         <div className="box-projetos">
-            <p>Projetos pessoais:</p>
+            <div className="box-p">
+                <p>Projetos pessoais:</p>
+            </div>
             <div className="box-projetos-item">
-                {!isLoading && loadedProjetos && loadedProjetos.map(projeto =>
+                {props.projetos.map(projeto =>
                     <ProjetoItem
                         key={projeto._id}
                         nome={projeto.nome}

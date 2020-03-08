@@ -4,13 +4,20 @@
     text-align: left;
     align-items: flex-start;
 }
-.box-projetos>p{
+.box-p{
+    background-color:#5D6166;
+    box-shadow: 0px 1px 6px black;
+}
+.box-projetos>.box-p>p{
     margin-top:1rem;
     margin-left:4rem;
     margin-bottom:1rem;
     font-weight: 1200;
-    font-size:1.8em;
-    color:#343a40;
+    font-size:1.4em;
+    color:white;
+    margin-top:0%;
+    padding:0.25rem;
+    
 }
 .box-projetos-item{
     display:flex;
