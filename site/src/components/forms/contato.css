@@ -1,85 +1,129 @@
-.container-form{
+.container-contact {
+    padding: 4rem 0rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: center;
-}
-.box-form{
-    width: 40%;
-    margin-top:4%;
-    padding:1%;
-    background-color: rgba(169,169,169,0.4);
-    border-radius:2rem
-}
-.box-inputs{
-    margin-top:4%;
-}
-.box-inputs>form>div{
-    margin-top:0.5rem;
-    margin-bottom:0.5rem;
-}
-.box-inputs>form>div{
-    display: flex;
-    justify-content: center;
     align-items: center;
+    margin-bottom:2rem;
 }
-.box-inputs>form>div>label{
-    padding:3%;
-    color:#343a40;
-    font-weight:bold;
+
+
+/*------------------Header--------------------*/
+.content-top {
+    width: 50%;
+    height: 10rem;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    position: relative;
+    background-image: url('./icons/contact-us.jpg');
 }
-.box-inputs>form>div>input,
-.box-inputs>form>div>textarea{
+
+.content-top::before {
+    background-color: rgba(60, 61, 62, 0.65);
+    outline: none;
+    content: '';
+    display: block;
+    padding: 0%;
+    position: absolute;
+    height: 100%;
     width: 100%;
-    padding: 6px 10px;
-    display: inline-block;
-    border: 1px solid #F5F5F5;
-    border-radius: 10px;
-    box-sizing: border-box;
-    outline:none;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
-.box-inputs>form>div>input:hover,
-.box-inputs>form>div>textarea:hover{
-    border:1px solid #343a40;
-    transition: 0.2s;
-    -webkit-transition: 0.2s;
-    -moz-transition: 0.2s;
-    -o-transition: 0.2s; 
+
+.content-top>h4 {
+    margin-top: 3rem;
 }
-.box-form>strong{
-    font-size:1.8em;
+
+.content-top>* {
+    color: white;
+    position: relative;
+}
+
+/*---------------Formulario---------------*/
+
+.container-form {
+    background-color: rgba(60, 61, 62, 0.3);
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.container-form>form>div{
+    padding:1rem 1rem;
+}
+.container-form>form>div>label{
+    color:#f5f5f5;
+}
+.container-form>form>div>input{
+    border: 0;
+    outline: 0;
+    margin-left:1rem;
+    width: 50%;
+    color:#f5f5f5;
+    background-color: transparent;
+    border-bottom:1px solid #f5f5f5;
+}
+.container-form>form>div>input:focus{
+    border-bottom:1px solid white;
+    transition: 0.5s;
+}
+::-webkit-input-placeholder { /* Edge */
+    color: rgba(255,255,255,0.6);
+}
+.container-form>form>div>textarea{
+    vertical-align: top;
+    margin-left:1rem;
+    width:50%;
+    border: 0;
+    outline: 0;
+    color:#f5f5f5;
+    background-color: transparent;
+    border-bottom:1px solid #f5f5f5;
 }
 .button-form{
-    margin-top:3%;
-    margin-bottom:3%;
-    font-size: 1.2em;
-    padding:2%;
-    border:1px solid transparent;
-    background-color:#343a40;
-    color:#F5F5F5;
-    border-radius:15px;
+    margin:1rem 0rem;
+    padding:0.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 20%;
+    background-color: rgb(60, 61, 62);
+    border:none;
+    border-radius:2rem;
 }
-.button-form:hover{
-    background-color:#F5F5F5 ;
-    color:#343a40;
-    transition: 0.5s;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -o-transition: 0.5s; 
-    border:1px solid #343a40;
+.button-form>p{
+    color:white;
+    padding:0.25rem;
 }
-@media only screen and (max-width: 600px) {
-    .box-form{
-        width: 92%;
-        margin-top:2rem;
-   }
-   .box-form>strong{
-        margin-bottom:1rem;
+.arrow{
+    width: 25%;
+    height: 25%;
+    margin-left:1rem;
+}
+/*---------------------Media Query----------------------*/
+
+@media (max-width:768px) {
+    .content-top,.container-form{
+        width: 90%;
     }
-    .box-inputs>form>div>label{
-        padding:2%;
-        color:#343a40;
-        font-weight:bold;
+    .content-top>h4 {
+        margin: 1.5rem 0rem;
     }
+    .container-form>div>input,.container-form>div>textarea{
+        width: 70%;
+    }
+    .button-form{
+        width: 40%;
+    }
+
 }
