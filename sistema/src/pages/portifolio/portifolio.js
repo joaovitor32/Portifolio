@@ -1,15 +1,15 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
-import { useHttpClient } from '../components/hooks/http-hook';
+import { useHttpClient } from '../../components/hooks/http-hook';
 import { useHistory } from 'react-router-dom'
 
-import ErrorModal from '../components/UIElements/modal/errormodal';
-import ProjetosList from '../components/UIElements/projetos/projetolist'
-import LoadingSpinner from '../components/UIElements/LoadingSpinner';
+import ErrorModal from '../../components/UIElements/modal/errormodal';
+import ProjetosList from '../../components/UIElements/projetos/projetolist'
+import LoadingSpinner from '../../components/UIElements/LoadingSpinner';
 
-import './button.css'
+import '../button.css'
 
-import Add from './icons/plus.png'
+import Add from '../icons/plus.png'
 
 const Portifolio = props => {
 

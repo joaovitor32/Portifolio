@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react';
-import Card from '../components/UIElements/Card'
+import Card from '../../components/UIElements/Card'
 import './login.css';
-import { VALIDATOR_REQUIRE, VALIDATOR_EMAIL } from './../components/util/validators';
-import { useHttpClient } from '../components/hooks/http-hook'
-import AuthContext from '../components/context/auth-context'
-import ErrorModal from '../components/UIElements/modal/errormodal'
+import { VALIDATOR_REQUIRE, VALIDATOR_EMAIL } from '../../components/util/validators';
+import { useHttpClient } from '../../components/hooks/http-hook'
+import AuthContext from '../../components/context/auth-context'
+import ErrorModal from '../../components/UIElements/modal/errormodal'
 
 const Login = props => {
 

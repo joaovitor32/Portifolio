@@ -1,15 +1,15 @@
 import React,{useEffect,useState,useCallback} from 'react';
 import { useHistory } from 'react-router-dom';
-import {useHttpClient} from '../components/hooks/http-hook';
+import {useHttpClient} from '../../components/hooks/http-hook';
 
-import ErrorModal from '../components/UIElements/modal/errormodal'
+import ErrorModal from '../../components/UIElements/modal/errormodal'
 
-import Add from './icons/plus.png'
-import './NovoCurso.css'
-import './button.css'
-import LoadingSpinner from '../components/UIElements/LoadingSpinner';
+import Add from '../icons/plus.png'
+import '../NovoCurso/NovoCurso.css'
+import '../button.css'
+import LoadingSpinner from '../../components/UIElements/LoadingSpinner';
 
-import CursoList from '../components/UIElements/cursos/cursoslist'
+import CursoList from '../../components/UIElements/cursos/cursoslist'
 
 const Curso = props => {
 

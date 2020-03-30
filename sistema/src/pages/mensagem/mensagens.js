@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
-import { useHttpClient } from '../components/hooks/http-hook';
+import { useHttpClient } from '../../components/hooks/http-hook';
 
-import ContentTable from '../components/UIElements/messages/TableMessages'
-import Card from '../components/UIElements/Card'
-import LoadingSpinner from '../components/UIElements/LoadingSpinner'
+import ContentTable from '../../components/UIElements/messages/TableMessages'
+import Card from '../../components/UIElements/Card'
+import LoadingSpinner from '../../components/UIElements/LoadingSpinner'
 
 import './message.css'
 

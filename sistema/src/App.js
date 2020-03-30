@@ -4,13 +4,13 @@ import {BrowserRouter as Router,Route,Redirect,Switch} from 'react-router-dom';
 import {useAuth} from './components/hooks/auth-hooks';
 import AuthContext from './components/context/auth-context';
 
-import Mensagem from './pages/mensagens';
-import Portifolio from './pages/portifolio';
-import NovoProjeto from './pages/NovoProjeto';
-import Curso from './pages/curso';
-import NovoCurso from './pages/NovoCurso';
+import Mensagem from './pages/mensagem/mensagens';
+import Portifolio from './pages/portifolio/portifolio';
+import NovoProjeto from './pages/NovoProjeto/NovoProjeto';
+import Curso from './pages/curso/curso';
+import NovoCurso from './pages/NovoCurso/NovoCurso';
 
-import Login from './pages/login';
+import Login from './pages/login/login';
 import Navigation from './components/UIElements/navigation/navigation'
 
 function App() {

@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
 
-import './form.css'
+import '../form.css'
 
-import { useHttpClient } from '../components/hooks/http-hook';
-import AuthContext from '../components/context/auth-context';
+import { useHttpClient } from '../../components/hooks/http-hook';
+import AuthContext from '../../components/context/auth-context';
 
-import BoxForm from '../components/UIElements/BoxForm'
-import ErrorModal from '../components/UIElements/modal/errormodal'
+import BoxForm from '../../components/UIElements/BoxForm'
+import ErrorModal from '../../components/UIElements/modal/errormodal'
 
 const NovoProjeto = props => {
 
