@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const fs = require('fs');
 const path = require('path')
 
@@ -55,7 +57,7 @@ app.use((error, req, res, next) => {
 });
 
 mongoose.connect(
-    "mongodb+srv://buzina:mensalao63@cluster0-xgjz4.mongodb.net/test?retryWrites=true&w=majority"
+  process.env.MONGO_STRING_CONNECTION
   )
   .then(() => {
     app.listen(5000);
